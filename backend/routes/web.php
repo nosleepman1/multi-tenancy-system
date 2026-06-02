@@ -34,7 +34,6 @@ foreach (config('tenancy.central_domains') as $domain) {
 
             // Create Tenant centrally
             $tenant = Tenant::create([
-                'id' => $request->subdomain,
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
