@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Tenant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
+    // use WithoutModelEvents;
 
     /**
      * Seed the application's database.
@@ -17,9 +17,19 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+
+        $tenant = Tenant::create([
+            'id' => '1',
+            'name' => 'excellence',
+            'email' => 'contact@excellence.com',
+        ]);
+
+        $tenant->domains()->create([
+            'domain' => 'excellence.localhost',
         ]);
     }
 }

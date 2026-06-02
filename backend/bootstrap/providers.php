@@ -1,7 +1,7 @@
 <?php
 
 use App\Providers\AppServiceProvider;
-use Stancl\Tenancy\TenancyServiceProvider;
+use App\Providers\TenancyServiceProvider;
 
 return [
     AppServiceProvider::class,
